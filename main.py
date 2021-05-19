@@ -14,7 +14,7 @@ for i in range(37):
     }
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0"}
     resp = requests.get(url, params=params, headers=headers)
-    data = resp.json()['districts']
+    print(resp)
     for district in data:
         districtId.append(district)
 
