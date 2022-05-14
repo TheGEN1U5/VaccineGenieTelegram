@@ -2,8 +2,6 @@ import requests
 from telegram.ext import Updater, CommandHandler
 import datetime
 import json
-from fake_useragent import UserAgent
-ua = UserAgent()
 
 # district data collection
 districtId = []
@@ -14,8 +12,7 @@ for i in range(37):
     params = {
         "state_id": query
     }
-    headers = {"User-Agent": ua.random}
-    resp = requests.get(url, params=params, headers=headers)
+    resp = requests.get(url, params=params)
     print(resp)
     for district in data:
         districtId.append(district)
